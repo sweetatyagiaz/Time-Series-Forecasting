@@ -16,9 +16,9 @@ ARIMA is particularly effective for univariate time-series data exhibiting trend
 
 An ARIMA model is denoted as:
 
-\[
+$$
 ARIMA(p,d,q)
-\]
+$$
 
 Where:
 
