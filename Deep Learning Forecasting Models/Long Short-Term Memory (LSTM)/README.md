@@ -15,9 +15,8 @@ LSTMs are widely used in:
 - Demand Forecasting
 - Sensor Data Analysis
 
----
 
-# Why LSTM?
+## Why LSTM?
 
 Traditional neural networks assume inputs are independent of one another.
 
@@ -43,10 +42,31 @@ backpropagated through time. LSTM solves this with a **memory cell** and a
 system of **gates** that explicitly control what information is kept,
 discarded, or output at each time step.
 
+## Common Use Cases
 
----
+- **Time-series forecasting** — demand, sales, stock prices, sensor data
+- **Natural language processing** — language modeling, translation, sentiment analysis (largely superseded by Transformers today)
+- **Speech recognition and generation**
+- **Anomaly detection** in sequential/streaming data
+- **Video and gesture recognition** (as part of larger architectures)
 
-# LSTM Architecture
+## Strengths and Limitations
+
+**Strengths**
+- Captures long-range temporal dependencies better than plain RNNs
+- Handles variable-length sequences naturally
+- Well-suited to noisy, non-stationary time series with complex patterns
+- Mature tooling and broad framework support (PyTorch, TensorFlow/Keras)
+
+**Limitations**
+- Sequential computation makes training slower than Transformers, which parallelize across time steps
+- Needs more data than classical statistical models (ARIMA, ETS) to perform well
+- More hyperparameters to tune (hidden size, layers, window size, learning rate)
+- Point forecasts by default — quantifying uncertainty requires extra techniques (e.g. Monte Carlo dropout, quantile loss)
+- Largely overtaken by Transformer-based architectures for large-scale NLP, though still competitive for many time-series tasks
+
+
+## LSTM Architecture
 
 An LSTM cell consists of:
 
@@ -73,11 +93,10 @@ An LSTM cell consists of:
           Hidden State
 ```
 
----
 
-# Core Components
+## Core Components
 
-## Cell State
+### Cell State
 
 The cell state acts as the long-term memory of the network.
 
@@ -91,9 +110,7 @@ Where:
 
 - $C_t$ = Current Cell State
 
----
-
-## Hidden State
+### Hidden State
 
 The hidden state represents the short-term memory and output of the LSTM at each time step.
 
@@ -105,9 +122,7 @@ Where:
 
 - $h_t$ = Hidden State
 
----
-
-# Forget Gate
+## Forget Gate
 
 The forget gate decides what information should be removed from memory.
 
@@ -135,9 +150,7 @@ $$
 - 0 → Forget everything
 - 1 → Keep everything
 
----
-
-# Input Gate
+## Input Gate
 
 The input gate determines what new information should be stored.
 
@@ -165,7 +178,7 @@ Where:
 
 ---
 
-# Output Gate
+## Output Gate
 
 The output gate determines what information is exposed as the hidden state.
 
@@ -179,9 +192,8 @@ $$
 h_t = o_t \odot tanh(C_t)
 $$
 
----
 
-# Complete LSTM Flow
+## Complete LSTM Flow
 
 ```text
 Input
@@ -204,7 +216,7 @@ Hidden State
 
 ---
 
-# LSTM for Time-Series Forecasting
+## LSTM for Time-Series Forecasting
 
 Example:
 
@@ -232,7 +244,7 @@ The LSTM learns temporal dependencies and predicts the next value.
 
 ---
 
-# Data Preparation
+## Data Preparation
 
 LSTM expects input in a 3D format:
 
