@@ -34,8 +34,6 @@ Where:
 
 ## 1. Autoregressive (AR)
 
-The AR component uses previous observations to predict future values.
-
 ### AR(p) Model
 
 The Autoregressive (AR) model predicts the current value of a time series using its previous values.
