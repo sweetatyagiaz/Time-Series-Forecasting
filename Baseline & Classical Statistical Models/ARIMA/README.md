@@ -38,20 +38,55 @@ The AR component uses previous observations to predict future values.
 
 ### AR(p) Model
 
-\[
-Y_t = c + \sum_{i=1}^{p}\phi_iY_{t-i} + \epsilon_t
-\]
+The Autoregressive (AR) model predicts the current value of a time series using its previous values.
+
+$$
+Y_t = c + \sum_{i=1}^{p}\phi_i Y_{t-i} + \epsilon_t
+$$
 
 Where:
 
-- \(Y_t\) = Current value
-- \(Y_{t-i}\) = Previous values
-- \(\phi_i\) = AR coefficients
-- \(\epsilon_t\) = Error term
+| Symbol | Description |
+|---------|-------------|
+| $Y_t$ | Current value of the time series |
+| $Y_{t-i}$ | Previous lagged observations |
+| $c$ | Constant term (intercept) |
+| $\phi_i$ | Autoregressive coefficients |
+| $\epsilon_t$ | Random error term (white noise) |
+| $p$ | Number of lag observations used |
 
-### Example
+#### Example: AR(2)
 
-Today's stock price depends on the previous 5 days' prices.
+For an AR model with two lag terms:
+
+$$
+Y_t = c + \phi_1Y_{t-1} + \phi_2Y_{t-2} + \epsilon_t
+$$
+
+This means the current value depends on:
+
+- Previous value: $Y_{t-1}$
+- Second previous value: $Y_{t-2}$
+- Random noise: $\epsilon_t$
+
+#### Use Cases
+
+- Stock price forecasting
+- Sales forecasting
+- Demand prediction
+- Economic indicator forecasting
+
+#### Advantages
+
+- Simple and interpretable
+- Captures temporal dependencies
+- Works well for stationary time series
+
+#### Limitations
+
+- Assumes linear relationships
+- Requires stationary data
+- Performance decreases for highly nonlinear patterns
 
 ---
 
