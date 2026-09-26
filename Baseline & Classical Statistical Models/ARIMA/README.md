@@ -92,17 +92,83 @@ This means the current value depends on:
 
 Differencing removes trends and makes the series stationary.
 
-### First Difference
+### First Order Differencing
 
-\[
+First-order differencing removes linear trends by subtracting the previous observation from the current observation.
+
+$$
 Y'_t = Y_t - Y_{t-1}
-\]
+$$
 
-### Second Difference
+Where:
 
-\[
+- $Y_t$ = Current value
+- $Y_{t-1}$ = Previous value
+- $Y'_t$ = Differenced value
+
+Example:
+
+| Time | Value |
+|------|--------|
+| t-1 | 100 |
+| t | 110 |
+
+$$
+Y'_t = 110 - 100 = 10
+$$
+
+---
+
+### Second Order Differencing
+
+If the first differencing does not make the series stationary, a second differencing can be applied.
+
+$$
 Y''_t = Y'_t - Y'_{t-1}
-\]
+$$
+
+Expanding the equation:
+
+$$
+Y''_t = (Y_t - Y_{t-1}) - (Y_{t-1} - Y_{t-2})
+$$
+
+Simplified:
+
+$$
+Y''_t = Y_t - 2Y_{t-1} + Y_{t-2}
+$$
+
+Where:
+
+- $Y''_t$ = Second-order differenced value
+- $Y'_t$ = First-order differenced value
+
+Example:
+
+| Time | Value |
+|------|--------|
+| t-2 | 90 |
+| t-1 | 100 |
+| t | 110 |
+
+First Difference:
+
+$$
+Y'_t = 110 - 100 = 10
+$$
+
+$$
+Y'_{t-1} = 100 - 90 = 10
+$$
+
+Second Difference:
+
+$$
+Y''_t = 10 - 10 = 0
+$$
+
+A second difference of zero indicates that the underlying trend has been removed.
 
 ### Why Differencing?
 
