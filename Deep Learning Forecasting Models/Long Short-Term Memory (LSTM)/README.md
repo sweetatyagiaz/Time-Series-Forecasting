@@ -15,6 +15,25 @@ LSTMs are widely used in:
 - Demand Forecasting
 - Sensor Data Analysis
 
+**This tutorial is divided into four parts; they are:**
+
+1. Univariate LSTM Models
+    1. Vanilla LSTM
+    2. Stacked LSTM
+    3. Bidirectional LSTM
+    4. CNN LSTM
+    5. ConvLSTM
+2. Multivariate LSTM Models
+    1. Multiple Input Series
+    2. Multiple Parallel Series
+3. Multi-Step LSTM Models
+    1. Vector Output Model
+    2. Encoder-Decoder Model
+4. Multivariate Multi-Step LSTM Models
+    1. Multiple Input Multi-Step Output
+    2. Multiple Parallel Input and Multi-Step Output
+
+
 
 ## Why LSTM?
 
