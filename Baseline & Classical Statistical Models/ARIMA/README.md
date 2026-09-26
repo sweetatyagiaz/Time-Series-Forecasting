@@ -302,25 +302,48 @@ MA models are useful when:
 
 # Complete ARIMA Model
 
-Combining AR, I, and MA:
+ARIMA combines:
 
-\[
+- **AR (AutoRegressive)** – Uses previous observations.
+- **I (Integrated)** – Applies differencing to achieve stationarity.
+- **MA (Moving Average)** – Uses previous forecast errors.
+
+The complete model is represented as:
+
+$$
 ARIMA(p,d,q)
-\]
+$$
 
-Example:
+Where:
 
-```text
+| Parameter | Description |
+|-----------|-------------|
+| $p$ | Number of Autoregressive (AR) terms |
+| $d$ | Number of Differencing operations |
+| $q$ | Number of Moving Average (MA) terms |
+
+
+### Example
+
+$$
 ARIMA(2,1,1)
-```
+$$
 
 Meaning:
 
-- AR order = 2
-- Differencing = 1
-- MA order = 1
+| Component | Value | Description |
+|------------|--------|-------------|
+| AR Order ($p$) | 2 | Uses the previous 2 observations |
+| Differencing ($d$) | 1 | Applies first-order differencing |
+| MA Order ($q$) | 1 | Uses the previous forecast error |
 
----
+### Interpretation
+
+An ARIMA(2,1,1) model:
+
+1. Applies first-order differencing to make the series stationary.
+2. Uses the previous two observations to predict future values.
+3. Uses the previous forecast error to improve prediction accuracy.
 
 # Workflow for Building ARIMA Models
 
@@ -331,7 +354,7 @@ Raw Time Series
 Check Stationarity
       │
       ▼
-Apply Differencing
+Apply Differencing 
       │
       ▼
 Determine p and q
