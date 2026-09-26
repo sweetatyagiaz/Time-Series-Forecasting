@@ -186,15 +186,117 @@ Uses previous forecast errors to improve future predictions.
 
 ### MA(q) Model
 
-\[
+The Moving Average (MA) model predicts the current value of a time series using previous forecast errors.
+
+$$
 Y_t = \mu + \epsilon_t + \sum_{i=1}^{q}\theta_i\epsilon_{t-i}
-\]
+$$
 
 Where:
 
-- \(\mu\) = Mean
-- \(\epsilon_t\) = Current error
-- \(\theta_i\) = MA coefficients
+| Symbol | Description |
+|---------|-------------|
+| $Y_t$ | Current value of the time series |
+| $\mu$ | Mean of the series |
+| $\epsilon_t$ | Current random error (white noise) |
+| $\epsilon_{t-i}$ | Previous forecast errors |
+| $\theta_i$ | Moving Average coefficients |
+| $q$ | Number of lagged error terms |
+
+---
+
+### Example: MA(2)
+
+For a Moving Average model of order 2:
+
+$$
+Y_t = \mu + \epsilon_t + \theta_1\epsilon_{t-1} + \theta_2\epsilon_{t-2}
+$$
+
+This means the current value depends on:
+
+- Current random error: $\epsilon_t$
+- Previous error: $\epsilon_{t-1}$
+- Second previous error: $\epsilon_{t-2}$
+
+---
+
+### Interpretation
+
+Suppose:
+
+$$
+\mu = 100
+$$
+
+$$
+\epsilon_t = 2
+$$
+
+$$
+\epsilon_{t-1} = -3
+$$
+
+$$
+\epsilon_{t-2} = 1
+$$
+
+$$
+\theta_1 = 0.5
+$$
+
+$$
+\theta_2 = 0.3
+$$
+
+Then:
+
+$$
+Y_t = 100 + 2 + (0.5 \times -3) + (0.3 \times 1)
+$$
+
+$$
+Y_t = 100 + 2 - 1.5 + 0.3
+$$
+
+$$
+Y_t = 100.8
+$$
+
+---
+
+### When to Use MA Models
+
+MA models are useful when:
+
+- Forecast errors exhibit autocorrelation
+- Recent shocks affect future observations
+- Data is stationary
+- Short-term forecasting is required
+
+---
+
+### Advantages
+
+✅ Captures the impact of past forecast errors
+
+✅ Simple statistical interpretation
+
+✅ Effective for stationary series
+
+✅ Useful for modeling short-term fluctuations
+
+---
+
+### Limitations
+
+❌ Requires stationary data
+
+❌ Cannot model trends directly
+
+❌ Cannot model seasonality directly
+
+❌ Performance decreases for highly nonlinear patterns
 
 ---
 
