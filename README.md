@@ -30,6 +30,115 @@ Supported domains include:
 
 ---
 
+---
+
+# Recommended Models by Use Case
+
+Selecting the right forecasting model depends on data volume, forecast horizon, seasonality, feature availability, and business requirements.
+
+| Use Case | Recommended Models | Why |
+|-----------|--------------------|------|
+| Sales Forecasting | Prophet, XGBoost | Handles seasonality, promotions, and business trends effectively |
+| Demand Planning | XGBoost, LightGBM | Strong performance with multivariate features and external drivers |
+| Stock Market Forecasting | LSTM, Transformer | Captures temporal dependencies and complex market behavior |
+| Energy Load Forecasting | Informer, Autoformer | Designed for long-horizon forecasting and large-scale time-series |
+| Retail Forecasting | Prophet + XGBoost | Combines trend/seasonality modeling with machine learning features |
+| IoT Sensor Forecasting | TCN, GRU | Efficiently models sensor streams and temporal patterns |
+| Financial Forecasting | PatchTST, Informer | State-of-the-art transformer architectures for financial time-series |
+| Supply Chain Forecasting | Prophet, XGBoost, LightGBM | Handles seasonality, demand fluctuations, and external factors |
+| Economic Forecasting | ARIMA, Prophet, Transformer | Effective for trend analysis and macroeconomic indicators |
+| Weather Forecasting | LSTM, Transformer, Autoformer | Captures long-term dependencies and nonlinear patterns |
+| Traffic Forecasting | GRU, TCN, Informer | Suitable for high-frequency sequential data |
+| Inventory Forecasting | Holt-Winters, Prophet, XGBoost | Strong performance for seasonal demand planning |
+| Large Scale Enterprise Forecasting | Hybrid Ensemble | Combines statistical, ML, and deep learning models for robustness |
+
+---
+
+# Model Selection Guide
+
+### If your dataset is small (<10K observations)
+
+Recommended:
+
+- Naive
+- Moving Average
+- ARIMA
+- Holt-Winters
+- Prophet
+
+### If your dataset is medium (10K–1M observations)
+
+Recommended:
+
+- Random Forest
+- XGBoost
+- LightGBM
+- CatBoost
+
+### If your dataset is large (>1M observations)
+
+Recommended:
+
+- LSTM
+- GRU
+- TCN
+- Informer
+- Autoformer
+- PatchTST
+
+### If you need explainability
+
+Recommended:
+
+- ARIMA
+- Prophet
+- Random Forest
+- XGBoost
+
+### If you need the highest accuracy
+
+Recommended:
+
+- PatchTST
+- Informer
+- Autoformer
+- TimeGPT
+- Hybrid Ensemble Models
+
+### If you need zero-shot forecasting
+
+Recommended:
+
+- TimeGPT
+- Chronos
+- Moirai
+- TimesFM
+
+---
+
+# Recommended Learning Path
+
+For practitioners new to forecasting, follow this progression:
+
+1. Naive Forecasting
+2. Moving Average
+3. ARIMA
+4. Holt-Winters
+5. Prophet
+6. XGBoost
+7. LightGBM
+8. LSTM
+9. TCN
+10. Transformer
+11. Informer
+12. Autoformer
+13. PatchTST
+14. TimeGPT / Chronos / Moirai
+
+This progression moves from classical statistical methods to state-of-the-art foundation models while building intuition about time-series behavior and forecasting techniques.
+
+---
+
 # Forecasting Model Categories
 
 The repository organizes forecasting algorithms into five major categories.
