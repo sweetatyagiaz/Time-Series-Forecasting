@@ -37,7 +37,11 @@ Past Weather Conditions → Future Weather Forecast
 
 LSTMs can remember important information over long periods and use it to make better predictions.
 
-A standard RNN struggles to "remember" information from many steps earlier in a sequence because gradients shrink exponentially as they are backpropagated through time. LSTM solves this with a memory cell and a system of gates that explicitly control what information is kept, discarded, or output at each time step.
+A standard RNN struggles to "remember" information from many steps earlier
+in a sequence because gradients shrink exponentially as they are
+backpropagated through time. LSTM solves this with a **memory cell** and a
+system of **gates** that explicitly control what information is kept,
+discarded, or output at each time step.
 
 
 ---
